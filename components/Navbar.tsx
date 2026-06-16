@@ -1,14 +1,36 @@
-import Link from "next/link";
 import Image from "next/image";
-export default function Navbar() {
-  return <nav>
-    <Image src="/images/fluxstore-logo.png" alt="Logo" width={100} height={50} />
-    <Link href="/">Home</Link>
-    <Link href="/products">Products</Link>
-    <Link href="/cart">Cart</Link>
-    <Link href="/cart">
-    <Image src="/images/cart-icon.svg" alt="Cart Icon" width={24} height={24} />
-    </Link>
+import Link from "next/link";
+import styles from "./Navbar.module.css";
 
-  </nav>;
+export default function Navbar() {
+  return (
+    <nav className={styles.navbar}>
+      <Link href="/" className={styles.logo}>
+        <Image
+          src="/images/fluxstore-icon.svg"
+          alt="FluxStore Logo"
+          width={120}
+          height={120}
+        />
+      </Link>
+
+      <ul className={styles.navLinks}>
+        <li>
+          <Link href="/">Home</Link>
+        </li>
+
+        <li>
+          <Link href="/products">Products</Link>
+        </li>
+
+        <li>
+          <Link href="/about">About</Link>
+        </li>
+
+        <li>
+          <Link href="/contact">Contact</Link>
+        </li>
+      </ul>
+    </nav>
+  );
 }
