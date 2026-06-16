@@ -57,8 +57,6 @@ export default function Navbar() {
       </ul>
 
       <div className="flex items-center justify-end gap-1">
-        <ThemeToggle className={iconButtonClass} />
-
         <Link
           href="/cart"
           aria-label={
@@ -69,9 +67,9 @@ export default function Navbar() {
           <Image
             src="/images/cart-icon.svg"
             alt=""
-            width={20}
-            height={20}
-            className="h-5 w-5"
+            width={40}
+            height={40}
+            className="h-9 w-9"
             aria-hidden="true"
           />
           {cartCount > 0 && (
@@ -83,6 +81,7 @@ export default function Navbar() {
             </span>
           )}
         </Link>
+        <ThemeToggle className={iconButtonClass} />
       </div>
     </nav>
   );
