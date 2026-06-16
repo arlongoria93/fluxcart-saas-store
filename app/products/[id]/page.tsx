@@ -16,9 +16,11 @@ export default async function ProductPage({
 
   return (
     <main className="mx-auto max-w-6xl p-8">
-      <h1 className="text-4xl font-bold">{product.name}</h1>
+      <h1 className="text-4xl font-bold text-foreground">{product.name}</h1>
 
-      <p className="mt-4 text-2xl font-semibold">${product.price}</p>
+      <p className="mt-4 text-2xl font-semibold text-foreground">
+        ${product.price}
+      </p>
     </main>
   );
 }
