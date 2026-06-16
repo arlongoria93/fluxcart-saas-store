@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navbar'
+import './globals.css'
 export default function RootLayout({
   children,
 }: {
@@ -7,7 +8,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Next.js 13 App Router Example</title>
+        <title></title>
       </head>
       <body>
         <Navbar />
