@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   return (
-    <nav className={styles.navbar}>
-      <Link href="/" className={styles.logo}>
+    <nav className="flex items-center justify-between border-b px-8 py-4 bg-white">
+      
+      <Link href="/">
         <Image
           src="/images/fluxstore-icon.svg"
           alt="FluxStore Logo"
@@ -14,23 +14,35 @@ export default function Navbar() {
         />
       </Link>
 
-      <ul className={styles.navLinks}>
+      <ul className="flex gap-8">
         <li>
-          <Link href="/">Home</Link>
+          <Link 
+            href="/"
+            className="font-medium text-gray-800 hover:text-blue-600"
+          >
+            Home
+          </Link>
         </li>
 
         <li>
-          <Link href="/products">Products</Link>
+          <Link 
+            href="/products"
+            className="font-medium text-gray-800 hover:text-blue-600"
+          >
+            Products
+          </Link>
         </li>
 
         <li>
-          <Link href="/about">About</Link>
-        </li>
-
-        <li>
-          <Link href="/contact">Contact</Link>
+          <Link 
+            href="/about"
+            className="font-medium text-gray-800 hover:text-blue-600"
+          >
+            About
+          </Link>
         </li>
       </ul>
+
     </nav>
   );
 }
