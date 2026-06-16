@@ -2,7 +2,11 @@
 
 import { useTheme } from "@/context/ThemeContext";
 
-export default function ThemeToggle() {
+type ThemeToggleProps = {
+  className?: string;
+};
+
+export default function ThemeToggle({ className = "" }: ThemeToggleProps) {
   const { theme, toggleTheme } = useTheme();
 
   return (
@@ -10,7 +14,7 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-      className="rounded-lg border border-border p-2 text-foreground transition hover:bg-muted"
+      className={className}
     >
       {theme === "light" ? (
         <svg
