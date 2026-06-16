@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Product } from "@/types/product";
+import { useCart } from "@/context/CartContext";
 
 export default function ProductCard({ product }: { product: Product }) {
+  const { addToCart } = useCart();
   return (
     <Link href={`/products/${product.id}`}>
       <div className="group rounded-xl border p-4 transition hover:shadow-lg">
@@ -25,7 +27,16 @@ export default function ProductCard({ product }: { product: Product }) {
 
             <p className="mt-2 text-lg font-bold">${product.price}</p>
 
-            <button className="mt-4 w-full rounded-lg bg-black py-2 text-white transition hover:bg-gray-800">
+            <button
+              onClick={() =>
+                addToCart({
+                  id: product.id,
+                  name: product.name,
+                  price: product.price,
+                })
+              }
+              className="mt-4 w-full rounded-lg bg-black py-2 text-white transition hover:bg-gray-800"
+            >
               Add to Cart
             </button>
           </div>
